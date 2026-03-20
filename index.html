@@ -1095,8 +1095,8 @@
     <!-- Background Canvas -->
     <canvas id="bgCanvas"></canvas>
 
-    <!-- Music -->
-    <audio id="bgMusic" loop>
+    <!-- Music (Added autoplay attribute) -->
+    <audio id="bgMusic" loop autoplay>
         <source src="Ap Dhillon - With You (Lyrics).mp3" type="audio/mpeg">
     </audio>
 
@@ -1732,11 +1732,24 @@
             }
         }
 
-        // ===== MUSIC =====
+        // ======================================
+        // ===== MUSIC (UPDATED AUTOPLAY) =======
+        // ======================================
         let musicPlaying = false;
         const audio = document.getElementById('bgMusic');
         const waves = document.getElementById('musicWaves');
         audio.volume = 0.25;
+
+        // Try to play immediately when the page loads
+        window.addEventListener('load', () => {
+            audio.play().then(() => {
+                musicPlaying = true;
+                waves.classList.remove('paused');
+            }).catch((error) => {
+                // Browser Autoplay Policy blocked it. It will wait for the first click.
+                console.log("Autoplay blocked by browser. Waiting for user tap.");
+            });
+        });
 
         function toggleMusic() {
             if (musicPlaying) {
@@ -1749,8 +1762,18 @@
             musicPlaying = !musicPlaying;
         }
 
-        // Auto-play on first interaction
+        // Fallback: Auto-play on very first interaction if browser blocked the initial load
         document.addEventListener('click', () => {
+            if (!musicPlaying) {
+                audio.play().then(() => {
+                    musicPlaying = true;
+                    waves.classList.remove('paused');
+                }).catch(() => {});
+            }
+        }, { once: true });
+        
+        // Listen for scroll as another interaction to trigger blocked autoplay
+        document.addEventListener('scroll', () => {
             if (!musicPlaying) {
                 audio.play().then(() => {
                     musicPlaying = true;
