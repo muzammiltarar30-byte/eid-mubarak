@@ -431,29 +431,6 @@
             text-align: center;
         }
 
-        .photo-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            color: rgba(201, 168, 76, 0.4);
-        }
-
-        .photo-placeholder svg {
-            width: 60px;
-            height: 60px;
-            opacity: 0.4;
-        }
-
-        .photo-placeholder span {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
         /* ===== VIDEO SECTION ===== */
         #videos {
             background: radial-gradient(ellipse at center, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
@@ -491,51 +468,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .video-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .play-btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            border: 2px solid var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .play-btn:hover {
-            background: rgba(201, 168, 76, 0.2);
-            transform: scale(1.1);
-        }
-
-        .play-btn svg {
-            fill: var(--gold);
-            width: 25px;
-            height: 25px;
-            margin-left: 5px;
-        }
-
-        .video-placeholder span {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: rgba(201, 168, 76, 0.5);
-            text-transform: uppercase;
+            outline: none;
+            border: none;
         }
 
         /* =========================================
-           ===== NEW UPDATED EIDI SECTION CSS =====
+           ===== EIDI SECTION CSS =====
            ========================================= */
         #eidi {
             background: radial-gradient(ellipse at center, rgba(201, 168, 76, 0.08) 0%, transparent 60%);
@@ -591,7 +529,6 @@
             filter: drop-shadow(0 0 30px rgba(201, 168, 76, 0.5));
         }
 
-        /* Back of the envelope */
         .envelope-back {
             position: absolute;
             top: 0;
@@ -603,7 +540,6 @@
             z-index: 1;
         }
 
-        /* Front folds container */
         .envelope-front {
             position: absolute;
             top: 0;
@@ -664,7 +600,7 @@
 
         .envelope-flap.open {
             transform: rotateX(-180deg);
-            z-index: 1; /* Drop behind card */
+            z-index: 1;
         }
 
         .envelope-seal {
@@ -693,7 +629,6 @@
             transform: translate(-50%, -50%) scale(0);
         }
 
-        /* Glowing Pop-up Card */
         .eidi-card {
             position: absolute;
             top: 10px;
@@ -734,7 +669,6 @@
             margin-top: 5px;
         }
 
-        /* QR Code Styling */
         .qr-container {
             margin: 10px 0;
             padding: 5px;
@@ -768,7 +702,6 @@
             transition: opacity 0.3s;
         }
 
-        /* Reveal Text Below */
         .eidi-text-reveal {
             max-width: 650px;
             margin: 30px auto 0;
@@ -1095,7 +1028,6 @@
                 padding: 30px 25px;
             }
 
-            /* Responsive tweaks for new Eidi section */
             .floating-wrapper {
                 width: 280px;
                 height: 190px;
@@ -1175,7 +1107,7 @@
         </div>
     </div>
 
-    <!-- Navigation 
+    <!-- Navigation -->
     <nav>
         <a href="#hero">Home</a>
         <a href="#message">Message</a>
@@ -1183,7 +1115,7 @@
         <a href="#videos">Videos</a>
         <a href="#eidi">Eidi</a>
         <a href="#poetry">Poetry</a>
-    </nav>-->
+    </nav>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -1247,7 +1179,7 @@
         </div>
     </section>
 
-    <!-- ===== PHOTOS SECTION ===== -->
+    <!-- ===== UPDATED PHOTOS SECTION ===== -->
     <section id="photos">
         <p class="section-label">Our Moments</p>
         <h2 class="section-title">Through My Eyes</h2>
@@ -1258,111 +1190,64 @@
         </p>
 
         <div class="photos-grid">
-            <!-- Replace src with actual photo paths -->
+            
             <div class="photo-item" onclick="openLightbox(this)">
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/>
-                    </svg>
-                    <span>Add Photo 01</span>
-                </div>
+                <!-- Image 1 -->
+                <img src="photo1.jpg" alt="My Janaaa">
                 <div class="photo-overlay"><p>My Janaaa</p></div>
             </div>
 
             <div class="photo-item" onclick="openLightbox(this)">
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/>
-                    </svg>
-                    <span>Add Photo 02</span>
-                </div>
+                <!-- Image 2 -->
+                <img src="photo2.jpg" alt="My Everything">
                 <div class="photo-overlay"><p>My Everything</p></div>
             </div>
 
             <div class="photo-item" onclick="openLightbox(this)">
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/>
-                    </svg>
-                    <span>Add Photo 03</span>
-                </div>
+                <!-- Image 3 -->
+                <img src="photo3.jpg" alt="Pure Happiness">
                 <div class="photo-overlay"><p>Pure Happiness</p></div>
             </div>
 
             <div class="photo-item" onclick="openLightbox(this)">
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/>
-                    </svg>
-                    <span>Add Photo 04</span>
-                </div>
+                <!-- Image 4 -->
+                <img src="photo4.jpg" alt="My Reason">
                 <div class="photo-overlay"><p>My Reason</p></div>
             </div>
+
         </div>
     </section>
 
-    <!-- ===== VIDEO SECTION ===== -->
-    <section id="videos">
-        <p class="section-label">Moving Memories</p>
-        <h2 class="section-title">You In Motion</h2>
+  
 
-        <div class="videos-wrapper">
-            <!-- Replace with actual video sources -->
-            <div class="video-item">
-                <div class="video-placeholder">
-                    <div class="play-btn">
-                        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                    </div>
-                    <span>Add Video 01</span>
-                </div>
-            </div>
-
-            <div class="video-item">
-                <div class="video-placeholder">
-                    <div class="play-btn">
-                        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                    </div>
-                    <span>Add Video 02</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====================================
-         ===== NEW UPDATED EIDI SECTION =====
-         ==================================== -->
+    <!-- ===== EIDI SECTION ===== -->
     <section id="eidi">
         <div class="eidi-container">
             <p class="section-label">Something Special</p>
             <h2 class="section-title">Your Eidi, Janaaa</h2>
 
-            <!-- Added floating wrapper for up/down animation -->
             <div class="floating-wrapper" id="floatingWrapper" onclick="openEnvelope()">
                 <div class="envelope-wrapper visible" id="envelopeWrapper">
                     <div class="envelope" id="envelope">
                         
-                        <!-- Back of the envelope -->
                         <div class="envelope-back"></div>
 
-                        <!-- The pop-out card (with QR code) -->
                         <div class="eidi-card" id="eidiCard">
                             <div class="eidi-amount">Your Eidi</div>
                             <div class="eidi-label">Scan to receive</div>
                             
-                            <!-- REPLACE src WITH YOUR ACTUAL QR CODE IMAGE LINK -->
+                            <!-- Replace src with your QR Code Image Link -->
                             <div class="qr-container">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="Eidi QR Code" class="qr-image">
                             </div>
                         </div>
 
-                        <!-- Front folds -->
                         <div class="envelope-front">
                             <div class="envelope-left-fold"></div>
                             <div class="envelope-right-fold"></div>
                             <div class="envelope-bottom-fold"></div>
                         </div>
 
-                        <!-- Top flap and seal -->
                         <div class="envelope-flap" id="envelopeFlap"></div>
                         <div class="envelope-seal" id="envelopeSeal">J</div>
                     </div>
@@ -1371,7 +1256,6 @@
 
             <p class="envelope-hint" id="envelopeHint">Tap the floating envelope to open</p>
 
-            <!-- This text will gently fade in after the beautiful animation finishes -->
             <div class="eidi-text-reveal" id="eidiTextReveal">
                 <p class="eidi-message">
                     This Eidi comes with something that no amount can ever measure, which is the promise that every Eid
@@ -1444,7 +1328,7 @@
     <!-- ===== CLOSING SECTION ===== -->
     <section id="closing">
         <p class="closing-urdu">
-             میں کیا کہوں کہ مجھے صبر کیوں نہیں آتا<br>
+            میں کیا کہوں کہ مجھے صبر کیوں نہیں آتا<br>
             میں کیا کروں کہ تجھے دیکھنے کی عادت ہے
         </p>
         <div class="closing-name">Janaaa</div>
